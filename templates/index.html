@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Natural Language to SQL</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Natural Language to SQL</h1>
+
+        <form method="POST">
+
+            <input type="text" name="query" placeholder="Ask your question..." required>
+
+            <button type="submit">
+                Generate SQL
+            </button>
+
+        </form>
+
+        {% if sql_query %}
+
+        <div class="output">
+
+            <h2>Generated SQL</h2>
+
+            <pre>{{ sql_query }}</pre>
+
+            <h2>Query Result</h2>
+
+            <pre>{{ results }}</pre>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+
+</html>
